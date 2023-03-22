@@ -1,52 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Myra"
+      "name": "Dexter Mann",
+      "id": 1
     },
     {
-      "name": "Mrs. Priscilla Fritsch",
+      "name": "Lamar McLaughlin",
       "id": 2
     },
     {
-      "name": "Terrance Gleason",
+      "name": "Walter Rath",
       "id": 3
     },
     {
-      "name": "Russell Denesik",
+      "name": "Marty Tillman",
       "id": 4
     },
     {
-      "name": "Neil Schmitt",
+      "name": "Miss Caleb Flatley",
       "id": 5
     },
     {
-      "name": "Joanna Deckow",
+      "name": "Pam Veum",
       "id": 6
-    },
-    {
-      "name": "Ada Lindgren",
-      "id": 7
-    },
-    {
-      "name": "Marion Homenick",
-      "id": 8
-    },
-    {
-      "name": "Robin O'Conner",
-      "id": 9
-    },
-    {
-      "name": "Doreen Pollich",
-      "id": 10
-    },
-    {
-      "name": "Grace Smith",
-      "id": 11
-    },
-    {
-      "name": "Saul Luettgen Sr.",
-      "id": 12
     }
   ],
   "albums": [],
