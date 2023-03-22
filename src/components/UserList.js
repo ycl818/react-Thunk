@@ -1,14 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers, addUser } from "../store";
 import Button from "../components/Button";
 import Skeleton from "./Skeleton";
 
+function useThunk(thunk) {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const dispath = useDispatch();
+
+  const runThunk = useCallback(() => {
+    setIsLoading(true);
+    dispath(thunk())
+      .unwrap()
+      .catch((err) => setError(err))
+      .finally(() => setIsLoading(false));
+  }, [dispath, thunk]);
+
+  return [runThunk, isLoading, error];
+}
+
 const UserList = () => {
-  const [isLoadingUsers, setIsLoadingUsers] = useState(false);
-  const [loadingUsersError, setLoadingUsersError] = useState(null);
-  const [isCreatingUser, setCreatingUser] = useState(false);
-  const [creatingUserError, serCreatingUserError] = useState(null);
+  const [doFetchUsers, isLoadingUsers, loadingUsersError] =
+    useThunk(fetchUsers);
+
+  const [doCreateUser, isCreatingUser, creatingUserError] = useThunk(addUser);
 
   const dispatch = useDispatch();
   const { data } = useSelector((state) => {
@@ -16,19 +32,11 @@ const UserList = () => {
   });
 
   useEffect(() => {
-    setIsLoadingUsers(true);
-    dispatch(fetchUsers())
-      .unwrap()
-      .catch((error) => setLoadingUsersError(error))
-      .finally(() => setIsLoadingUsers(false));
-  }, [dispatch]);
+    doFetchUsers();
+  }, [doFetchUsers]);
 
   const handleUserAdd = () => {
-    setCreatingUser(true);
-    dispatch(addUser())
-      .unwrap()
-      .catch((err) => serCreatingUserError(err))
-      .finally(() => setCreatingUser(false));
+    doCreateUser();
   };
 
   if (isLoadingUsers) {
