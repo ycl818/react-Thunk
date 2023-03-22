@@ -1,24 +1,9 @@
-import { useEffect, useState, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { fetchUsers, addUser } from "../store";
 import Button from "../components/Button";
 import Skeleton from "./Skeleton";
-
-function useThunk(thunk) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const dispath = useDispatch();
-
-  const runThunk = useCallback(() => {
-    setIsLoading(true);
-    dispath(thunk())
-      .unwrap()
-      .catch((err) => setError(err))
-      .finally(() => setIsLoading(false));
-  }, [dispath, thunk]);
-
-  return [runThunk, isLoading, error];
-}
+import { useThunk } from "../hooks/useThunk";
 
 const UserList = () => {
   const [doFetchUsers, isLoadingUsers, loadingUsersError] =
@@ -26,7 +11,6 @@ const UserList = () => {
 
   const [doCreateUser, isCreatingUser, creatingUserError] = useThunk(addUser);
 
-  const dispatch = useDispatch();
   const { data } = useSelector((state) => {
     return state.users; // {data:[], isLoading: false, error:null}
   });
