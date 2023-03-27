@@ -25,6 +25,87 @@
       "id": 6
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": 10,
+      "title": "hiking trip",
+      "userId": 1
+    },
+    {
+      "userId": 1,
+      "title": "Generic Steel Tuna",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "title": "Handmade Metal Pizza",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "title": "Practical Steel Shirt",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "title": "Rustic Concrete Salad",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "title": "Gorgeous Cotton Shoes",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "title": "Generic Concrete Shoes",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "title": "Fantastic Bronze Sausages",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "title": "Awesome Bronze Pizza",
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "title": "Handmade Cotton Chips",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "title": "Intelligent Concrete Pizza",
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "title": "Tasty Rubber Computer",
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "title": "Luxurious Plastic Sausages",
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "title": "Luxurious Wooden Cheese",
+      "id": 23
+    },
+    {
+      "userId": 2,
+      "title": "Awesome Frozen Ball",
+      "id": 24
+    },
+    {
+      "userId": 2,
+      "title": "Tasty Wooden Keyboard",
+      "id": 25
+    }
+  ],
   "photos": []
 }
